@@ -44,6 +44,34 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -52,6 +80,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -174,8 +204,23 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\CIDADE.cs" />
+    <Compile Include="Models\CLIENTES.cs" />
+    <Compile Include="Models\ESTADO.cs" />
+    <Compile Include="Models\HISTORICO.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MECANICOS.cs" />
+    <Compile Include="Models\MECANICOSDOSERVICO.cs" />
+    <Compile Include="Models\NIVEISDEACESSO.cs" />
+    <Compile Include="Models\PRODUTOS.cs" />
+    <Compile Include="Models\PRODUTOSDAVENDA.cs" />
+    <Compile Include="Models\REGRASACESSO.cs" />
+    <Compile Include="Models\SisAutoDb.cs" />
+    <Compile Include="Models\UNIDMEDIDA.cs" />
+    <Compile Include="Models\USUARIOS.cs" />
+    <Compile Include="Models\VEICULOS.cs" />
+    <Compile Include="Models\VENDAS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -186,8 +231,77 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Layout Sistema\blank.html" />
+    <Content Include="Layout Sistema\charts-morris.html" />
+    <Content Include="Layout Sistema\charts-nvd3.html" />
+    <Content Include="Layout Sistema\charts-other.html" />
+    <Content Include="Layout Sistema\charts-rickshaw.html" />
+    <Content Include="Layout Sistema\favicon.ico" />
+    <Content Include="Layout Sistema\form-editors.html" />
+    <Content Include="Layout Sistema\form-elements.html" />
+    <Content Include="Layout Sistema\form-file-handling.html" />
+    <Content Include="Layout Sistema\form-layouts-one-column.html" />
+    <Content Include="Layout Sistema\form-layouts-separated.html" />
+    <Content Include="Layout Sistema\form-layouts-tabbed.html" />
+    <Content Include="Layout Sistema\form-layouts-two-column.html" />
+    <Content Include="Layout Sistema\form-validation.html" />
+    <Content Include="Layout Sistema\form-wizards.html" />
+    <Content Include="Layout Sistema\index.html" />
+    <Content Include="Layout Sistema\layout-boxed.html" />
+    <Content Include="Layout Sistema\layout-frame-left.html" />
+    <Content Include="Layout Sistema\layout-frame-right.html" />
+    <Content Include="Layout Sistema\layout-nav-custom.html" />
+    <Content Include="Layout Sistema\layout-nav-right.html" />
+    <Content Include="Layout Sistema\layout-nav-toggled.html" />
+    <Content Include="Layout Sistema\layout-nav-top-fixed.html" />
+    <Content Include="Layout Sistema\layout-nav-top.html" />
+    <Content Include="Layout Sistema\layout-search-left.html" />
+    <Content Include="Layout Sistema\maps.html" />
+    <Content Include="Layout Sistema\pages-address-book.html" />
+    <Content Include="Layout Sistema\pages-blog-list.html" />
+    <Content Include="Layout Sistema\pages-blog-post.html" />
+    <Content Include="Layout Sistema\pages-calendar.html" />
+    <Content Include="Layout Sistema\pages-content-table.html" />
+    <Content Include="Layout Sistema\pages-error-404-2.html" />
+    <Content Include="Layout Sistema\pages-error-404.html" />
+    <Content Include="Layout Sistema\pages-error-500.html" />
+    <Content Include="Layout Sistema\pages-faq.html" />
+    <Content Include="Layout Sistema\pages-gallery.html" />
+    <Content Include="Layout Sistema\pages-login-website-light.html" />
+    <Content Include="Layout Sistema\pages-login-website.html" />
+    <Content Include="Layout Sistema\pages-login.html" />
+    <Content Include="Layout Sistema\pages-mailbox-compose.html" />
+    <Content Include="Layout Sistema\pages-mailbox-inbox.html" />
+    <Content Include="Layout Sistema\pages-mailbox-message.html" />
+    <Content Include="Layout Sistema\pages-messages.html" />
+    <Content Include="Layout Sistema\pages-profile.html" />
+    <Content Include="Layout Sistema\pages-search.html" />
+    <Content Include="Layout Sistema\pages-tasks.html" />
+    <Content Include="Layout Sistema\pages-timeline-simple.html" />
+    <Content Include="Layout Sistema\pages-timeline.html" />
+    <Content Include="Layout Sistema\table-basic.html" />
+    <Content Include="Layout Sistema\table-datatables.html" />
+    <Content Include="Layout Sistema\table-export.html" />
+    <Content Include="Layout Sistema\ui-alerts-popups.html" />
+    <Content Include="Layout Sistema\ui-buttons.html" />
+    <Content Include="Layout Sistema\ui-elements.html" />
+    <Content Include="Layout Sistema\ui-icons.html" />
+    <Content Include="Layout Sistema\ui-lists.html" />
+    <Content Include="Layout Sistema\ui-panels.html" />
+    <Content Include="Layout Sistema\ui-portlet.html" />
+    <Content Include="Layout Sistema\ui-sliders.html" />
+    <Content Include="Layout Sistema\ui-tour.html" />
+    <Content Include="Layout Sistema\ui-typography.html" />
+    <Content Include="Layout Sistema\ui-widgets.html" />
+    <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\angular.min.js.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -237,6 +351,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Layout Sistema\assets\" />
+    <Folder Include="Layout Sistema\audio\" />
+    <Folder Include="Layout Sistema\css\" />
+    <Folder Include="Layout Sistema\img\" />
+    <Folder Include="Layout Sistema\js\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
