@@ -23,9 +23,18 @@ namespace SisAuto
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/meusScripts").Include(
+                      "~/Scripts/bootstrap.min.js",
+                      "~/Scripts/angular.js",
+                      "~/Scripts/SisAutoApp/Modules.js",
+                      "~/Scripts/SisAutoApp/Controllers.js",
+                      "~/Scripts/SisAutoApp/Services.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/css/font-awesome.css",
+                      "~/Scripts/morris/morris-0.4.3.min.css",
+                      "~/Content/css/custom.css"));
         }
     }
 }

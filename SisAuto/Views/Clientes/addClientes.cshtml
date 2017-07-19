@@ -1,0 +1,54 @@
+﻿@model SisAuto.Models.CLIENTES
+
+<div class="row" ng-controller="SisAutoCtrl">
+    <div class="col-md-12">
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)
+            {
+                <fieldset>
+                    <legend>Cadastro de Clientes</legend>
+                    <div class="row">
+                        <div class="col-md-4 form-group">
+                            @Html.LabelFor(c=>c.NOMECLI, new {@class="col-md-12 control-label"})
+                            @Html.TextBoxFor(c => c.NOMECLI, new {@class="col-md-12 form-control"})
+                            @Html.ValidationMessageFor(c=>c.NOMECLI)
+                        </div>
+                        <div class="form-group col-md-4">
+                            @Html.Label("Estados",new {@class="col-md-12 control-label"})
+                            @Html.DropDownList("ddlEstados", new SelectList(ViewBag.allStates, "ESTADOID", "SIGLA"), "Selecione", new { @class = "form-control col-md-12", @ng_model="cli.Estados", ng_change = "getAllCitiesState({{cli.Estados}})" })
+                        </div>
+                        <div class="form-group col-md-4">
+                            @Html.Label("Cidades", new { @class = "control-label col-md-12" })
+                            <select ng-disabled="!cli.Estados" ng-options="item.NOME for item in cities" ng-model="programador.Cidade"  class="form-control col-md-12">
+                                <option value="">Selecione</option>
+                            </select>
+                        </div>
+                     </div>
+                    <div class="row">
+                        <div class="col-md-4 form-group">
+                            @Html.LabelFor(c => c.BAIRROCLI, new { @class = "col-md-12 control-label" })
+                            @Html.TextBoxFor(c => c.BAIRROCLI, new { @class = "col-md-12 form-control" })
+                            @Html.ValidationMessageFor(c => c.BAIRROCLI)
+                        </div>
+                        <div class="col-md-3 form-group">
+                            @Html.LabelFor(c => c.RUACLI, new { @class = "col-md-12 control-label" })
+                            @Html.TextBoxFor(c => c.RUACLI, new { @class = "col-md-12 form-control" })
+                            @Html.ValidationMessageFor(c => c.RUACLI)
+                        </div>
+                        <div class="col-md-1 form-group">
+                            @Html.LabelFor(c => c.NUMCLI, new { @class = "col-md-12 control-label" })
+                            @Html.TextBoxFor(c => c.NUMCLI, new { @class = "col-md-12 form-control" })
+                            @Html.ValidationMessageFor(c => c.NUMCLI)
+                        </div>
+                        <div class="col-md-4 form-group">
+                            @Html.LabelFor(c => c.FONECLI, new { @class = "col-md-12 control-label" })
+                            @Html.TextBoxFor(c => c.FONECLI, new { @class = "col-md-12 form-control" })
+                            @Html.ValidationMessageFor(c => c.FONECLI)
+                        </div>
+                    </div>
+                </fieldset>
+            }
+        }
+    </div>
+</div>

@@ -22,23 +22,28 @@ namespace SisAuto.Models
 
         public int? CIDADEID { get; set; }
 
-        [Required]
+        [Required(ErrorMessage ="O campo Nome é Obrigatório!")]
         [StringLength(200)]
+        [Display(Name ="Nome")]
         public string NOMECLI { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "O campo Bairro é obrigatório!")]
+        [Display(Name = "Bairro")]
         [StringLength(200)]
         public string BAIRROCLI { get; set; }
 
         [StringLength(100)]
+        [Display(Name = "Rua")]
         public string RUACLI { get; set; }
-
+        [Display(Name = "N°")]
         public int? NUMCLI { get; set; }
 
+        [Display(Name = "Telefone")]
         [StringLength(20)]
         public string FONECLI { get; set; }
 
         [StringLength(20)]
+        [Display(Name = "CPF")]
         public string CPFCLI { get; set; }
 
         [StringLength(8000)]
