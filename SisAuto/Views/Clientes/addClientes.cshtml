@@ -1,7 +1,7 @@
 ﻿@model SisAuto.Models.CLIENTES
 
 <div class="row" ng-controller="SisAutoCtrl">
-    <div class="col-md-12">
+    <div class="col-md-10">
         @using (Html.BeginForm())
         {
             @Html.ValidationSummary(true)
@@ -27,29 +27,45 @@
                         </div>
                      </div>
                     <div class="row">
-                        <div class="col-md-4 form-group">
+                        <div class="col-md-3 form-group">
                             @Html.LabelFor(c => c.BAIRROCLI, new { @class = "col-md-12 control-label" })
                             @Html.TextBoxFor(c => c.BAIRROCLI, new { @class = "col-md-12 form-control" })
                             @Html.ValidationMessageFor(c => c.BAIRROCLI)
                         </div>
-                        <div class="col-md-3 form-group">
+                        <div class="col-md-4 form-group">
                             @Html.LabelFor(c => c.RUACLI, new { @class = "col-md-12 control-label" })
                             @Html.TextBoxFor(c => c.RUACLI, new { @class = "col-md-12 form-control" })
                             @Html.ValidationMessageFor(c => c.RUACLI)
                         </div>
-                        <div class="col-md-1 form-group">
+                        <div class="col-md-2 form-group">
                             @Html.LabelFor(c => c.NUMCLI, new { @class = "col-md-12 control-label" })
                             @Html.TextBoxFor(c => c.NUMCLI, new { @class = "col-md-12 form-control" })
                             @Html.ValidationMessageFor(c => c.NUMCLI)
                         </div>
-                        <div class="col-md-4 form-group">
+                        <div class="col-md-3 form-group">
                             @Html.LabelFor(c => c.FONECLI, new { @class = "col-md-12 control-label" })
                             @Html.TextBoxFor(c => c.FONECLI, new { @class = "col-md-12 form-control" })
                             @Html.ValidationMessageFor(c => c.FONECLI)
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            @Html.LabelFor(c=>c.CPFCLI, new {@class="control-label col-md-12"})
+                            @Html.TextBoxFor(c => c.CPFCLI, new {@class="form-control col-md-12"})
+                            @Html.ValidationMessageFor(c=>c.CPFCLI)
+                        </div>
+                        <div class="col-md-8 form-group">
+                            @Html.LabelFor(c=>c.OBSCLI, new {@class="control-label col-md-12" })
+                            @Html.TextAreaFor(c => c.OBSCLI, new{@class="form-control col-md-12" })
+                            @Html.ValidationMessageFor(c=>c.OBSCLI)
+                        </div>
+                    </div>
                 </fieldset>
-                <button type="submit">Enviar</button>
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <button type="submit" class="btn btn-success btn-block">Cadastrar</button>
+                    </div>
+                </div>
             }
         }
     </div>

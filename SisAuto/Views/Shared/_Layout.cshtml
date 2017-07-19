@@ -22,9 +22,9 @@
                 <a class="navbar-brand" href="index.html">SISAUTO</a>
             </div>
             <div style="color: white;
-padding: 15px 50px 5px 50px;
-float: right;
-font-size: 16px;">Last access : 30 May 2014 &nbsp;<a href="login.html" class="btn btn-danger square-btn-adjust">Logout</a></div>
+        padding: 15px 50px 5px 50px;
+        float: right;
+        font-size: 16px;">Last access : 30 May 2014 &nbsp;<a href="login.html" class="btn btn-danger square-btn-adjust">Logout</a></div>
         </nav>
         <!-- /. NAV TOP  -->
         <nav class="navbar-default navbar-side" role="navigation">
@@ -34,24 +34,16 @@ font-size: 16px;">Last access : 30 May 2014 &nbsp;<a href="login.html" class="bt
                         <img src="Content/img/find_user.png" class="user-image img-responsive" />
                     </li>
 
-
                     <li>
                         <a class="active-menu" href="index.html"><i class="fa fa-dashboard fa-3x"></i>Menus</a>
                     </li>
                     <li>
-                        <a href="registeration.html"><i class="fa fa-laptop fa-3x"></i> Registeration</a>
-                    </li>
-
-                    <li>
-                        <a href="#"><i class="fa fa fa-plus  fa-3x"></i> Cadastros<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa fa-plus  fa-3x"></i>Cadastros<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="#">@Html.ActionLink("Cadastrar Clientes", "addClientes", "Clientes")</a>
+                                @Html.ActionLink("Cadastrar Clientes","addClientes","Clientes")
                             </li>
                         </ul>
-                    </li>
-                    <li>
-                        <a href="blank.html"><i class="fa fa-square-o fa-3x"></i> Blank Page</a>
                     </li>
                 </ul>
 

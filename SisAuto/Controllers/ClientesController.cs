@@ -10,9 +10,12 @@ namespace SisAuto.Controllers
     public class ClientesController : Controller
     {
         private CidadeEstadoRepository cidadeEstadoRep;
+        private ClientesRepository clientesRep;
+        private bool flag;
         public ClientesController()
         {
             this.cidadeEstadoRep = new CidadeEstadoRepository();
+            this.clientesRep = new ClientesRepository();
         }
         [HttpGet]
         public JsonResult getAllCitiesIdStates(int id)
@@ -28,8 +31,11 @@ namespace SisAuto.Controllers
         [HttpPost]
         public ActionResult addClientes(CLIENTES cliente)
         {
-            cliente.CIDADEID = cliente.CIDADEID;
-            
+            if (ModelState.IsValid)
+            {
+                cliente.ATIVO = true;
+                flag = clientesRep.addClient(cliente);
+            }          
             return View();
         }
     }

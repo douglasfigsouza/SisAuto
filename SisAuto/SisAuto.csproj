@@ -222,6 +222,7 @@
     <Compile Include="Models\CIDADE.cs" />
     <Compile Include="Models\CidadeEstadoRepository.cs" />
     <Compile Include="Models\CLIENTES.cs" />
+    <Compile Include="Models\ClientesRepository.cs" />
     <Compile Include="Models\ESTADO.cs" />
     <Compile Include="Models\HISTORICO.cs" />
     <Compile Include="Models\IdentityModels.cs" />
