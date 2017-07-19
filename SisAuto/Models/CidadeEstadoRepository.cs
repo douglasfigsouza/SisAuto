@@ -8,9 +8,11 @@ namespace SisAuto.Models
     public class CidadeEstadoRepository
     {
         private SisAutoDb context;
+        List<CIDADE> lstCities;
         public CidadeEstadoRepository()
         {
             this.context = new SisAutoDb();
+            this.lstCities = new List<CIDADE>();
         }
         //lista todos os estados 
         public List<ESTADO> getAllStates()
@@ -23,10 +25,22 @@ namespace SisAuto.Models
         public List<CIDADE> getCitiesIdState(int Id)
         {
             var consulta = from c in context.CIDADE
-                           where c.CIDADEID == Id
-                           select c;
+                           where c.ESTADOID == Id
+                           select new {
+                              CIDADEID=c.CIDADEID,
+                              ESTADOID=c.ESTADOID,
+                              NOME= c.NOME
+                           };
 
-            return consulta.ToList();
+            foreach (var city in consulta)
+            {
+                lstCities.Add(new CIDADE {
+                    ESTADOID=city.ESTADOID,
+                    CIDADEID=city.CIDADEID,
+                    NOME=city.NOME
+                });
+            }
+            return lstCities.ToList();
         }
     }
 }
