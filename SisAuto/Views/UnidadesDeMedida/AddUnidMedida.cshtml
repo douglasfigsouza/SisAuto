@@ -1,0 +1,27 @@
+﻿@model SisAuto.Models.UNIDMEDIDA
+<div class="row">
+    <div class="col-md-10">
+       @using (Html.BeginForm())
+       {
+            @Html.ValidationSummary(true)
+           {
+                <fieldset>
+                    <legend>Cadastro de Unidades de Medida</legend>
+                    <div class="row">
+                        <div class="col-md-6 form-group">
+                            @Html.LabelFor(u => u.DESCUNID, new { @class = "col-md-12 control-label" })
+                            @Html.TextBoxFor(u => u.DESCUNID, new { @class = "col-md-12 form-control" })
+                            @Html.ValidationMessageFor(c => c.DESCUNID)
+                        </div>
+                        <div class="col-md-6 form-group">
+                            @Html.LabelFor(u => u.SIGLAUNID, new { @class = "col-md-12 control-label" })
+                            @Html.TextBoxFor(u => u.SIGLAUNID, new { @class = "col-md-12 form-control" })
+                            @Html.ValidationMessageFor(c => c.SIGLAUNID)
+                        </div>
+                    </div>
+                </fieldset>
+           }
+       }
+    </div>
+</div>
+

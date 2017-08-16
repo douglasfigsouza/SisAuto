@@ -1,0 +1,43 @@
+﻿@model SisAuto.Models.USUARIOS
+<div class="row">
+    <div class="col-md-6">
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)
+            {
+                <fieldset>
+                    <legend>Cadastro de Usuário</legend>
+                    <div class="row">
+                        <div class="col-md-6 form-group">
+                            @Html.LabelFor(u=>u.NOMEUSU, new {@class="control-label col-md-12"})
+                            @Html.TextBoxFor(u=>u.NOMEUSU, new {@class="col-md-12 form-control" })
+                            @Html.ValidationMessageFor(u=>u.NOMEUSU)
+                        </div>
+                        <div class="col-md-6 form-group">
+                            @Html.LabelFor(u => u.LOGINUSU, new { @class = "control-label col-md-12" })
+                            @Html.TextBoxFor(u => u.LOGINUSU, new { @class = "col-md-12 form-control" })
+                            @Html.ValidationMessageFor(u => u.LOGINUSU)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 form-group">
+                            @Html.LabelFor(u => u.SENHAUSU, new { @class = "control-label col-md-12" })
+                            @Html.TextBoxFor(u => u.SENHAUSU, new { @class = "col-md-12 form-control" })
+                            @Html.ValidationMessageFor(u => u.SENHAUSU)
+                        </div>
+                        <div class="col-md-6 form-group">
+                            @Html.LabelFor(u => u.ConfirmPassword, new { @class = "control-label col-md-12" })
+                            @Html.TextBoxFor(u => u.ConfirmPassword, new { @class = "col-md-12 form-control" })
+                            @Html.ValidationMessageFor(u => u.ConfirmPassword)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <button class="btn btn-block btn-success">Cadastrar</button>
+                        </div>
+                    </div>
+                </fieldset>
+            }
+        }
+    </div>
+</div>

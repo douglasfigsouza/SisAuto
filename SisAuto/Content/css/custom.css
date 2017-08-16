@@ -34,7 +34,10 @@ body {
     padding:10px;
     min-height:1200px;
 }
-
+fieldset legend {
+    text-align: center;
+    color:#f00;
+}
 .text-center {
     text-align:center;
 }

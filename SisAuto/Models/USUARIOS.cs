@@ -1,5 +1,6 @@
 namespace SisAuto.Models
 {
+    using Microsoft.AspNet.Identity.EntityFramework;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -33,6 +34,9 @@ namespace SisAuto.Models
         [Required]
         [StringLength(50)]
         public string SENHAUSU { get; set; }
+        [NotMapped]
+        [StringLength(50)]
+        public string ConfirmPassword { get; set; }
 
         public bool? ATIVO { get; set; }
 

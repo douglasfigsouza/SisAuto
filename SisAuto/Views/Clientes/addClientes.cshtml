@@ -1,6 +1,6 @@
 ﻿@model SisAuto.Models.CLIENTES
 
-<div class="row" ng-controller="SisAutoCtrl">
+<div class="row">
     <div class="col-md-10">
         @using (Html.BeginForm())
         {
@@ -20,7 +20,7 @@
                         </div>
                         <div class="form-group col-md-4">
                             @Html.Label("Cidades", new { @class = "control-label col-md-12" })
-                            <select ng-disabled="!Estados || !lstCities" ng-options="item.NOME for item in lstCities" ng-model="Cidades"  class="form-control col-md-12" ng-change="getIdCitie(Cidades.CIDADEID)">
+                            <select ng-disabled="!Estados || !lstCitiesClientes" ng-options="item.NOME for item in lstCitiesClientes" ng-model="Cidades"  class="form-control col-md-12" ng-change="getIdCitie(Cidades.CIDADEID)">
                                 <option value="">Selecione</option>
                             </select>
                             @Html.HiddenFor(c => c.CIDADEID, new{@ng_model="CidadeId",@ng_value= "CidadeId" })

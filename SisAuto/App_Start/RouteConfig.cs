@@ -16,7 +16,7 @@ namespace SisAuto
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Clientes", action = "addClientes", id = UrlParameter.Optional }
+                defaults: new { controller = "Users", action = "registerUsers", id = UrlParameter.Optional }
             );
         }
     }

@@ -26,10 +26,10 @@ namespace SisAuto
             bundles.Add(new ScriptBundle("~/bundles/meusScripts").Include(
                       "~/Scripts/bootstrap.min.js",
                       "~/Scripts/angular.js",
-                      "~/Scripts/jquery.metisMenu.js",
                       "~/Scripts/SisAutoApp/Modules.js",
                       "~/Scripts/SisAutoApp/Controllers.js",
-                      "~/Scripts/SisAutoApp/Services.js",
+                      "~/Scripts/SisAutoApp/Service.js",
+                      "~/Scripts/jquery.metisMenu.js",
                       "~/Scripts/morris/raphael-2.1.0.min.js",
                       "~/Scripts/morris/morris.js",
                       "~/Scripts/custom.js"));

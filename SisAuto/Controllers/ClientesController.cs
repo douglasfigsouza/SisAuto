@@ -20,7 +20,7 @@ namespace SisAuto.Controllers
         [HttpGet]
         public JsonResult getAllCitiesIdStates(int id)
         {
-           return Json(cidadeEstadoRep.getCitiesIdState(id), JsonRequestBehavior.AllowGet);
+            return Json(cidadeEstadoRep.getCitiesIdState(id), JsonRequestBehavior.AllowGet);
         }
         // GET: Clientes
         public ActionResult addClientes()
