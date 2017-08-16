@@ -7,16 +7,23 @@
            {
                 <fieldset>
                     <legend>Cadastro de Unidades de Medida</legend>
-                    <div class="row">
-                        <div class="col-md-6 form-group">
-                            @Html.LabelFor(u => u.DESCUNID, new { @class = "col-md-12 control-label" })
-                            @Html.TextBoxFor(u => u.DESCUNID, new { @class = "col-md-12 form-control" })
-                            @Html.ValidationMessageFor(c => c.DESCUNID)
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                @Html.LabelFor(u => u.DESCUNID, new { @class = "col-md-12 control-label" })
+                                @Html.TextBoxFor(u => u.DESCUNID, new { @class = "col-md-12 form-control" })
+                                @Html.ValidationMessageFor(c => c.DESCUNID)
+                            </div>
+                            <div class="col-md-6 form-group">
+                                @Html.LabelFor(u => u.SIGLAUNID, new { @class = "col-md-12 control-label" })
+                                @Html.TextBoxFor(u => u.SIGLAUNID, new { @class = "col-md-12 form-control" })
+                                @Html.ValidationMessageFor(c => c.SIGLAUNID)
+                            </div>
                         </div>
-                        <div class="col-md-6 form-group">
-                            @Html.LabelFor(u => u.SIGLAUNID, new { @class = "col-md-12 control-label" })
-                            @Html.TextBoxFor(u => u.SIGLAUNID, new { @class = "col-md-12 form-control" })
-                            @Html.ValidationMessageFor(c => c.SIGLAUNID)
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button type="submit" class="btn btn-success btn-block">Cadastrar</button>
+                            </div>
                         </div>
                     </div>
                 </fieldset>
