@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SisAuto.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,11 +9,15 @@ namespace SisAuto.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        public ActionResult Login()
         {
             return View();
         }
+        [HttpPost()]
+        public ActionResult Logar(USUARIOS user)
+        {
 
+        }
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

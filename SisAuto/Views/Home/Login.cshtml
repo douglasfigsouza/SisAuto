@@ -1,7 +1,7 @@
 ﻿@{
-    ViewBag.Title = "siteA";
     Layout = "~/Views/Shared/_LayoutLogin.cshtml";
 }
+@model SisAuto.Models.USUARIOS
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -9,11 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Free Bootstrap Admin Template : Binary Admin</title>
     <!-- BOOTSTRAP STYLES-->
-    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLES-->
-    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/css/font-awesome.css" rel="stylesheet" />
     <!-- CUSTOM STYLES-->
-    <link href="assets/css/custom.css" rel="stylesheet" />
+    <link href="~/Content/css/custom.css" rel="stylesheet" />
     <!-- GOOGLE FONTS-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 
@@ -23,9 +23,9 @@
         <div class="row text-center ">
             <div class="col-md-12">
                 <br /><br />
-                <h2> Binary Admin : Login</h2>
+                <h2>SISAUTO: Sistema de Gerenciamento Automotivo</h2>
 
-                <h5>( Login yourself to get access )</h5>
+                <h5>(Faça Login para ter acesso ao Sistema)</h5>
                 <br />
             </div>
         </div>
@@ -34,31 +34,36 @@
             <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <strong>   Enter Details To Login </strong>
+                        <strong> Informe seus Dados </strong>
                     </div>
                     <div class="panel-body">
-                        <form role="form">
+                     @using (Html.BeginForm())
+                     {
+                        @Html.ValidationSummary(true)
+                         {
                             <br />
                             <div class="form-group input-group">
                                 <span class="input-group-addon"><i class="fa fa-tag"></i></span>
-                                <input type="text" class="form-control" placeholder="Your Username " />
+                                @Html.TextBoxFor(u => u.LOGINUSU, new {@class="form-control",@placeholder="Seu Usuário"})
+                                @*<input type="text" class="form-control" placeholder="Seu Usuário " />*@
                             </div>
                             <div class="form-group input-group">
                                 <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                                <input type="password" class="form-control" placeholder="Your Password" />
+                                @Html.TextBoxFor(u => u.LOGINUSU, new { @class = "form-control", @placeholder = "Senha",@type="password" })
+                                @*<input type="password" class="form-control" placeholder="Sua Senha" />*@
                             </div>
                             <div class="form-group">
                                 <label class="checkbox-inline">
-                                    <input type="checkbox" /> Remember me
+                                    <input type="checkbox" /> Relembre-me
                                 </label>
                                 <span class="pull-right">
-                                    <a href="#">Forget password ? </a>
+                                    <a href="#">Esqueceu Sua Senha? </a>
                                 </span>
                             </div>
-                            <a href="index.html" class="btn btn-primary ">Login Now</a>
+                            <a href="index.html" class="btn btn-primary ">Entrar</a>
                             <hr />
-                            Not register ? <a href="registeration.html">click here </a>
-                        </form>
+                         }
+                     }
                     </div>
 
                 </div>
@@ -71,13 +76,13 @@
 
     <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
     <!-- JQUERY SCRIPTS -->
-    <script src="assets/js/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
     <!-- BOOTSTRAP SCRIPTS -->
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
     <!-- METISMENU SCRIPTS -->
-    <script src="assets/js/jquery.metisMenu.js"></script>
+    <script src="~/Scripts/jquery.metisMenu.js"></script>
     <!-- CUSTOM SCRIPTS -->
-    <script src="assets/js/custom.js"></script>
+    <script src="~/Scripts/custom.js"></script>
 
 </body>
 </html>
