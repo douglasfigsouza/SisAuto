@@ -9,10 +9,10 @@ namespace SisAuto.Controllers
 {
     public class UsersController : Controller
     {
-        private readonly UsuersRepository usersRep;
+        private readonly UsersRepository usersRep;
         public UsersController()
         {
-            this.usersRep = new UsuersRepository();
+            this.usersRep = new UsersRepository();
         }
         // GET: Users
         public ActionResult registerUsers()

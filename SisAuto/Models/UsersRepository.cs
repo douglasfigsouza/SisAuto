@@ -6,10 +6,10 @@ using System.Web.Security;
 
 namespace SisAuto.Models
 {
-    public class UsuersRepository
+    public class UsersRepository
     {
         private readonly SisAutoDb context;
-        public UsuersRepository()
+        public UsersRepository()
         {
             this.context = new SisAutoDb();
         }
@@ -47,9 +47,9 @@ namespace SisAuto.Models
             else
             {
                 SisAutoDb context = new SisAutoDb();
-                USUARIOS user = (from u in context.USUARIOS
+                USUARIOS user =(from u in context.USUARIOS
                                where u.LOGINUSU == Login
-                               select u).SingleOrDefault();
+                               select u).FirstOrDefault();
                 return user;
             }
         }

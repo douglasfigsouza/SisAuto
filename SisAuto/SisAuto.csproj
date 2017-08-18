@@ -243,7 +243,7 @@
     <Compile Include="Models\UnidadesDeMedidaRepository.cs" />
     <Compile Include="Models\UNIDMEDIDA.cs" />
     <Compile Include="Models\USUARIOS.cs" />
-    <Compile Include="Models\UsuersRepository.cs" />
+    <Compile Include="Models\UsersRepository.cs" />
     <Compile Include="Models\VEICULOS.cs" />
     <Compile Include="Models\VENDAS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
