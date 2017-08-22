@@ -25,6 +25,8 @@ namespace SisAuto.Controllers
         // GET: Clientes
         public ActionResult addClientes()
         {
+            USUARIOS usu = (USUARIOS)Session["User"];
+            ViewBag.UserLogado = UsersRepository.GetUserLogado(usu).NOMEUSU;
             ViewBag.allStates = cidadeEstadoRep.getAllStates().ToList();
             return View();
         }

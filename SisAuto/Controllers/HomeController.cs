@@ -30,16 +30,14 @@ namespace SisAuto.Controllers
             ModelState.Clear();
             if (ModelState.IsValid)
             {
-                if (usersRep.autenticaUser(user))
+                Session["User"] = UsersRepository.autenticaUser(user);
+                if(Session["User"]!=null)
                 {
-                    Session["User"] = user;
-                    var teste= (USUARIOS)Session["User"];
-                    ViewBag.UserLogado = teste.LOGINUSU;
                     return RedirectToAction("addClientes", "Clientes");
                 }
-                else return View();
+                else return RedirectToAction("/");
             }
-            else return View();
+            else return RedirectToAction("/");
         }
         public ActionResult About()
         {

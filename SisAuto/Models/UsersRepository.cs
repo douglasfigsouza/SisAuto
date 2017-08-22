@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Security;
+using static System.Collections.Specialized.BitVector32;
 
 namespace SisAuto.Models
 {
@@ -26,29 +27,27 @@ namespace SisAuto.Models
                 throw;
             }
         }
-        public bool autenticaUser(USUARIOS user)
+        public static USUARIOS autenticaUser(USUARIOS user)
         {
             SisAutoDb context = new SisAutoDb();
             var consulta = (from u in context.USUARIOS
                             where u.LOGINUSU == user.LOGINUSU
                             && u.SENHAUSU == user.SENHAUSU
                             select u).SingleOrDefault();
-            if (consulta == null) return false;
+            if (consulta == null) return null;
 
             FormsAuthentication.SetAuthCookie(consulta.LOGINUSU, false);
-            return true;
+            return consulta;
         }
-        public static USUARIOS GetUserLogado()
+        public static USUARIOS GetUserLogado(USUARIOS usuario)
         {
-            string Login = HttpContext.Current.User.Identity.Name;
-
-            if (Login == null) return null;
+            if (usuario == null) return null;
 
             else
             {
                 SisAutoDb context = new SisAutoDb();
                 USUARIOS user =(from u in context.USUARIOS
-                               where u.LOGINUSU == Login
+                               where u.LOGINUSU == usuario.LOGINUSU
                                select u).FirstOrDefault();
                 return user;
             }
